@@ -14,9 +14,9 @@ Analysis on the data of these exoplanets is difficult and expensive as scientist
 
 ## Methods
 
-Looking at the dataset, we’ve noticed that there are many data points with missing values. To address this issue, we will first scan the entire dataset and delete the columns of features with a high percentage of missing values (>70%). With a large number of features (102) in this dataset, removing these missing columns should have a negligible impact on our results.
+Looking at the dataset, we noticed that there are many data points with missing values. To address this issue, we will first scan the entire dataset and delete the columns of features with a high percentage of missing values (>70%). With a large number of features (102) in this dataset, removing these missing columns should have a negligible impact on our results.
 
-Due to the high dimensionality dataset, it may be beneficial to reduce dimensionality to focus on the most significant features and reduce overfitting. To achieve this, we can use Principal Component Analysis (PCA) to determine which principal components to keep based on correlations of the features. This should provide a simpler dataset which will likely improve performance and generalizability across the various machine learning models that we plan to implement.
+Due to the high dimensionality dataset, it may be beneficial to reduce dimensionality to focus on the most significant features and reduce overfitting. To achieve this, we can use Principal Component Analysis (PCA) to determine which principal components to keep based on correlations of the features. This should provide a simpler dataset which will likely improve performance and generalizability across the various ML models that we plan to implement.
 
 Another data preprocessing method we can use is median imputation, where we replace missing values with the median of the feature, however, this method doesn’t guarantee an accurate prediction. An alternative approach using collaborative filtering is to implement the K-Nearest Neighbors algorithm to find similar instances and replace missing values based on the values of the nearest neighbors. This approach is more implementation heavy, and will be reserved for a smaller set of features with missing values after using other preprocessing methods. Additionally, many features have very different scales ranging from decimal differences to thousands. As a result, we will need to scale the data’s features through min-max scaling or z-score standardization to ensure optimal model performance.
 
@@ -46,10 +46,24 @@ For this project we will evaluate the performance of our model using several qua
 
 
 ## Contribution Table
+
 | Name      | Contribution                                                |
-|-----------|-------------------------------------------------------------|
-| Varsha    | Results and Discussions: Expected result and project goals  |
-| Harshitha |                                                      |
-| Muchen    | Data processing methods, Github pages setup                 |
-| Sam       | Introduction/Background, Problem Statement                  |
-| Josh      |                                                      |
+|:----------|:------------------------------------------------------------|
+| Varsha    |Results and Discussions: Expected result and project goals     |
+| Harshitha |     |
+| Muchen    |Data processing methods, github pages setup     |
+| Sam       |Introduction/Background, Problem Statement     |
+| Josh      |   |
+
+## Gnatt Chart
+```mermaid
+gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
+```
