@@ -1,6 +1,13 @@
 title: Machine Learning Project
 description: Classification of habitable exoplanets
 show_downloads: true
-remote_theme: pages-themes/cayman@v0.2.0
+colors:
+    gradient_left: "#f2440a"
+    gradient_right: "#f26f0a"
+    header: "#fff"
+    android_theme: "#000" # this default to gradient_color
+    link: "#1e6bb8" # this default to gradient_color
+    section_title: "#155799" # this default to gradient_color
+remote_theme: tuur29/pages-themes-cayman
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
