@@ -69,4 +69,4 @@ For this project we will evaluate the performance of our model using several qua
 | Josh      |ML algorithm/model methods   |
 
 ## Gnatt Chart
-[Link to Gnatt Chart.](./Exoplanet Habitability.gannt.pdf)
+[Link to Gnatt Chart.](./Exoplanet-Gantt-Chart.pdf)
