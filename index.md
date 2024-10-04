@@ -68,5 +68,5 @@ For this project we will evaluate the performance of our model using several qua
 | Sam       |Introduction/Background, Problem Statement     |
 | Josh      |ML algorithm/model methods   |
 
-## Gnatt Chart
-[Link to Gnatt Chart.](./Exoplanet-Gantt-Chart.pdf)
+## Gantt Chart
+[Link to Gantt Chart.](./Exoplanet-Gantt-Chart.pdf)
