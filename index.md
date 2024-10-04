@@ -11,27 +11,25 @@ Here is the dataset: [kaggle.com/datasets/chandrimad31/phl-exoplanet-catalog](ht
 
 Analysis on the data of these exoplanets is difficult and expensive as scientists have found thousands of exoplanets over the years with tons of data on them without a streamlined method to determine habitability on this data. Using PCA and KNN, we can aid in the determination of whether a given exoplanet is more likely to be habitable.
 
-
 ## Methods
 
-Looking at the dataset, we noticed that there are many data points with missing values. To address this issue, we will first scan the entire dataset and delete the columns of features with a high percentage of missing values (>70%). With a large number of features (102) in this dataset, removing these missing columns should have a negligible impact on our results.
+Looking at the dataset, we’ve noticed that there are many data points with missing values. To address this issue, we will first scan the entire dataset and delete the columns of features with a high percentage of missing values (>70%), this would minimally affect the 102 features in the dataset.
 
-Due to the high dimensionality dataset, it may be beneficial to reduce dimensionality to focus on the most significant features and reduce overfitting. To achieve this, we can use Principal Component Analysis (PCA) to determine which principal components to keep based on correlations of the features. This should provide a simpler dataset which will likely improve performance and generalizability across the various ML models that we plan to implement.
+Due to the high dimensionality dataset, it may be beneficial to reduce dimensionality to focus on the most significant features and reduce overfitting. To achieve this, we can use Principal Component Analysis (PCA) to determine which principal components to keep based on correlations of the features. This should provide a simpler dataset which will likely improve performance and generalizability across the various machine learning models that we plan to implement.
 
-Another data preprocessing method we can use is median imputation, where we replace missing values with the median of the feature, however, this method doesn’t guarantee an accurate prediction. An alternative approach using collaborative filtering is to implement the K-Nearest Neighbors algorithm to find similar instances and replace missing values based on the values of the nearest neighbors. This approach is more implementation heavy, and will be reserved for a smaller set of features with missing values after using other preprocessing methods. Additionally, many features have very different scales ranging from decimal differences to thousands. As a result, we will need to scale the data’s features through min-max scaling or z-score standardization to ensure optimal model performance.
+Another data preprocessing method we can use is median imputation, where we replace missing values with the median of the feature, however, this method doesn’t guarantee an accurate prediction. An alternative approach using collaborative filtering is to implement the KNN algorithm to find similar instances and replace missing values based on the values of the nearest neighbors. This approach is more implementation heavy, and will be reserved for a smaller set of features with missing values after using other preprocessing methods. Additionally, many features have very different scales ranging from decimal differences to thousands. Therefore, we will need to scale the data’s features through min-max scaling or z-score standardization to ensure optimal model performance.
 
 Since habitability is a binary classification problem and the labels are provided in the dataset, we are working in a supervised learning setting which means we will need to segment our data into training and testing examples. It is important that we include enough cases of habitable planets in our each set due to the class imbalance.
 
-As a baseline model, we can use logistic regression to classify the exoplanets as either habitable or non-habitable. Agrawal et. al. demonstrated the notable performance of tree-based methods such as decision trees, random forests, and gradient boosted trees on the PHL-EC dataset. Following this notion, we plan to implement all three tree-based algorithms, specifically using scikit-learn or XGBoost library for our ordinary decision tree and random forest models, and the XGBoost library for our gradient boosted model.
+Agrawal et. al. demonstrated the notable performance of tree-based methods such as decision trees, random forests, and gradient boosted trees on the PHL-EC dataset. Following this notion, we plan to implement all three tree-based algorithms, specifically using scikit-learn or XGBoost library for our ordinary decision tree and random forest models, and the XGBoost library for our gradient boosted model.
 
 Similarly, support vector machines are effective in high dimensional spaces like our dataset, and this idea is accurately reflected by the strong SVM performance from Agrawal et. al. As such, we will implement the scikit-learn SVM model. 
 
 Unlike the paper, we also plan to implement a deep neural network (multilayer perceptron) and compare its performance to the other models after sufficient hyperparameter tuning and regularization. Depending on how much control we want over the architecture of the network, we can choose to use PyTorch or streamline our implementation by using Keras.
 
-
 ## Expected Results
 
-We expect that the model will have a high precision for identifying exoplanets that are potentially habitable and a recall rate that ensures minimal false positives. The PCA should help to increase model efficiency while maintaining prediction quality. In case the gaps in the dataset make it difficult to classify exoplanets as habitable or inhabitable, we will pivot to predicting a feature of the exoplanet considering if it is habitable or inhabitable.
+We expect that the model will have a high precision for identifying exoplanets that are habitable and a recall rate that ensures minimal false positives. The PCA should help to increase model efficiency while maintaining prediction quality. 
 
 ## Metrics
 
@@ -39,10 +37,25 @@ For this project we will evaluate the performance of our model using several qua
 
 ## Project Goals
 
-1.  In terms of accuracy, our goal is to achieve an accuracy of at least 80% when classifying habitability for the exoplanets. We chose 80% because that would give insights into how correct the model is without exceeding the scope of what is possible. Depending on how many features we use when classifying exoplanets as habitable, an 80% accuracy may be too high, but for now we want to aim for it.
-2. In terms of precision, our goal is to achieve a precision of at least .7 when classifying habitability for the exoplanets. We want to ensure that there is high confidence when classifying a planet as habitable or inhabitable, but we understand that there can be false positives.
-3. In terms of recall, our goal is to achieve a recall of at least .75 when classifying habitability for the exoplanets. We want to make sure the model correctly identifies a majority of habitable exoplanets and reduce the chances of missing habitable candidates. 
-4. In terms of F1-Score, our goal is to achieve a F1-Score of at least .7 when classifying habitability for the exoplanets. This would keep balance between precision and recall but still minimize false positives and negatives.
+1.  Accuracy: our goal is to achieve an accuracy of at least 80%. This will give insights into how correct the model is without exceeding the scope of what is possible. 
+2. Precision: our goal is to achieve a precision of at least .7 We want to ensure that there is high confidence when classifying a planet, but we understand that there can be false positives.
+3. Recall: our goal is to achieve a recall of at least .75. We want to make sure the model correctly identifies a majority of habitable exoplanets and reduce the chances of missing habitable candidates. 
+4. F1-Score: our goal is to achieve a F1-Score of at least .7. This would keep balance between precision and recall but still minimize false positives and negatives.
+
+
+## Works Cited
+
+1. Basak, S., et al. "Habitability Classification of Exoplanets: A Machine Learning Insight." *The European Physical Journal Special Topics*, vol. 230, no. 9, 2021, pp. 2005-2023. *SpringerLink*, doi:10.1140/epjs/s11734-021-00203-z. Accessed 4 Oct. 2024.
+
+2. "Importance of Feature Scaling." *Scikit-learn*, scikit-learn developers, https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html. Accessed 4 Oct. 2024.
+
+3. "KNN." *Scikit-learn*, scikit-learn developers, https://scikit-learn.org/stable/modules/neighbors.html. Accessed 4 Oct. 2024.
+
+4. "Neural Networks." *PyTorch Tutorials*, PyTorch, https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html. Accessed 4 Oct. 2024.
+
+5. "PCA." *Scikit-learn*, scikit-learn developers, https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html. Accessed 4 Oct. 2024.
+
+6. "Support Vector Machines." *Scikit-learn*, scikit-learn developers, https://scikit-learn.org/stable/modules/svm.html. Accessed 4 Oct. 2024.
 
 
 ## Contribution Table
@@ -50,20 +63,10 @@ For this project we will evaluate the performance of our model using several qua
 | Name      | Contribution                                                |
 |:----------|:------------------------------------------------------------|
 | Varsha    |Results and Discussions: Expected result and project goals     |
-| Harshitha |     |
+| Harshitha |Results and Discussions: Expected Results and Metrics     |
 | Muchen    |Data processing methods, github pages setup     |
 | Sam       |Introduction/Background, Problem Statement     |
-| Josh      |   |
+| Josh      |ML algorithm/model methods   |
 
 ## Gnatt Chart
-```mermaid
-gantt
-    title Project Timeline
-    dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2014-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2014-01-12  , 12d
-    another task      : 24d
-```
+[Link to Gnatt Chart.](./Exoplanet Habitability.gannt.pdf)
