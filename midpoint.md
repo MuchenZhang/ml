@@ -32,7 +32,11 @@ XGBoost Accuracy: 1.0
 SVM Accuracy: .75
 
 These accuracies are misleading due to the imbalanced dataset. SVM’s accuracy is less misleading due to our implementation of a data augmentation method (SMOTE) that improved the imbalance in our dataset. 
+
 ![5.png](img/5.png)
+
+This is a plot measuring the F1 scores of the training data compared to the validation data on the data trained using SVM with data augmentation using SMOTE. It’s clear from the graph that the data is not overfitting with SMOTE as the training score matches with the validation score for all values in the training set.
+
 ![3.png](img/3.png)
 
 This plot for XGBoost identifies which features contribute most to the predictions for habitable or non-habitable planets. The figure shows that features,  "f47," "f70," "f71," and "f49," have very high importance scores compared to the others which means that they are influential when making predictions. Specifically, “f47” has a score of 241, implying that it was very influential. This could explain our overfitting in which the model mostly focuses on these features and doesn’t learn the broader patterns. Balancing the feature importance could improve the model’s ability to generalize to unseen data.
