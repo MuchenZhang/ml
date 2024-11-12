@@ -32,7 +32,7 @@ XGBoost Accuracy: 1.0
 SVM Accuracy: .75
 
 These accuracies are misleading due to the imbalanced dataset. SVM’s accuracy is less misleading due to our implementation of a data augmentation method (SMOTE) that improved the imbalance in our dataset. 
-
+![5.png](img/5.png)
 ![3.png](img/3.png)
 
 This plot for XGBoost identifies which features contribute most to the predictions for habitable or non-habitable planets. The figure shows that features,  "f47," "f70," "f71," and "f49," have very high importance scores compared to the others which means that they are influential when making predictions. Specifically, “f47” has a score of 241, implying that it was very influential. This could explain our overfitting in which the model mostly focuses on these features and doesn’t learn the broader patterns. Balancing the feature importance could improve the model’s ability to generalize to unseen data.
@@ -50,12 +50,12 @@ SVM is a supervised machine learning algorithm that works well for classificatio
 As for next steps, we want to first address the imbalance in our dataset and overfitting in both XGBoost and SVM. We want to focus on adjusting feature selection and really choosing the right principal components in our PCA. Currently, the dominant features are leading to overfitting. Although we used a data augmentation method (SMOTE) to combat the imbalance, it didn’t fully mitigate the overfitting, so we will look at alternative data augmentation methods to combat the overfitting we are seeing. Once we work through this, we will look to explore implementing a Multilayer Perceptron to test a neural network's ability to capture complex patterns
 
 ## References
-[1] S. Basak, A. Mathur, A. J. Theophilus, G. Deshpande, and J. Murthy, “Habitability classification of exoplanets: A machine learning insight - the European physical journal Special topics,” SpringerLink, https://link.springer.com/article/10.1140/epjs/s11734-021-00203-z (accessed Oct. 4, 2024).
-[2] “Importance of feature scaling,” scikit-learn, https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html (accessed Oct. 4, 2024).
-[3] “Neural networks,” Neural Networks - PyTorch Tutorials 2.4.0+cu121 documentation, https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html (accessed Oct. 4, 2024).
-[4] “Support Vector Machines,” scikit-learn, https://scikit-learn.org/stable/modules/svm.html (accessed Oct. 4, 2024).
-[5] “KNN,” scikit-learn, https://scikit-learn.org/stable/modules/neighbors.html (accessed Oct. 4, 2024).
-[6] “PCA,” scikit-learn, https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html (accessed Oct. 4, 2024). 
+1. S. Basak, A. Mathur, A. J. Theophilus, G. Deshpande, and J. Murthy, “Habitability classification of exoplanets: A machine learning insight - the European physical journal Special topics,” SpringerLink, https://link.springer.com/article/10.1140/epjs/s11734-021-00203-z (accessed Oct. 4, 2024).
+2. “Importance of feature scaling,” scikit-learn, https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html (accessed Oct. 4, 2024).
+3. “Neural networks,” Neural Networks - PyTorch Tutorials 2.4.0+cu121 documentation, https://pytorch.org/tutorials/beginner/blitz/neural_networks_tutorial.html (accessed Oct. 4, 2024).
+4. “Support Vector Machines,” scikit-learn, https://scikit-learn.org/stable/modules/svm.html (accessed Oct. 4, 2024).
+5. “KNN,” scikit-learn, https://scikit-learn.org/stable/modules/neighbors.html (accessed Oct. 4, 2024).
+6. “PCA,” scikit-learn, https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html (accessed Oct. 4, 2024). 
 
 ## Contribution Table
 
