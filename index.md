@@ -5,6 +5,9 @@ layout: default
 ## Midpoint Report
 [View Midpoint Report](midpoint.md)
 
+## Final Report
+[View Final Report](final.md)
+
 ## Background
 
 Exoplanets are defined as planets that exist outside of our solar system. Some exoplanets have characteristics that make them more suitable for life than others. In the paper, “Habitability Classification of Exoplanets: A Machine Learning Insight”, Agrawal et. al. use various machine learning techniques to classify exoplanets from the PHL-EC dataset based on habitability to explore the limitations and suitability of different techniques. They found random forest, decision trees, and XGBoost performed the best in categorization. We want to explore this found insight using a dataset that categorized over 4000 unique exoplanets from the NASA Exoplanet Archive including 102 features, one of them being a boolean Habitality value.
