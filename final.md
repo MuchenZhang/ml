@@ -34,6 +34,7 @@ KNN works by identifying the 'k' closest data points (neighbors) to a given inpu
 ![KNN Example](img/final/knn3.png)
 
 ### PCA (Principal Component Analysis)
+
 ![PCA Example](img/final/pca1.png)
 ![PCA Example](img/final/pca2.png)
 
@@ -67,13 +68,16 @@ This is a plot measuring the accuracy of the training data compared to the valid
 
 ### Random Forest
 ![confusion matrix](img/final/randforest1.png)
+
 This is the confusion matrix for the Random Forest Model. This shows that class 0 is the majority class and there are 2 misclassifications. Class 1 is a minority class and has no misclassifications. Class 2 is also a minority class and has 2 misclassifications. The model performs really well for class 0 and 1 and only has minimal errors for class 2. This indicates that the model is accurately classifying planets as habitable or inhabitable. 
 
 ![random forest](img/final/randforest2.png)
+
 This is a learning curve plot for the Random Forest model. The plot shows that the F1 Score increases as the size of the training dataset increases. The F1 Score starts around .85 for smaller sets of around 2000 samples. Around 4500 to 8500 samples the F1 Score stabilizes around .90. When the dataset reaches around 10,000 samples, the F1 Score becomes .91. This shows that Random Forest is learning from the data and performs well with a large dataset. 
 
 ### Neural Network
 ![neural network](img/final/nn1.png)
+
 This visual shows two key training metrics for our Neural Net model trained on the exoplanet habitability classification task. These plots track its performance over 250 training epochs. The left plot shows the training loss overtime, measuring the model's prediction error over the training process. The loss curve begins at around 1.15 and shows a sharp decline within the first 50 epochs and then plateaus at around 0.65. The initial rapid decline indicates that the model is learning efficiently and the plateau suggests that the model reached a stable stage of optimization. The right plot shows the training accuracy over time. This metric represents the proportion of correct predictions the model made. The model starts off with a low training accuracy but has a sharp increase within the first 50 epochs and then plateaus at around 0.95. Both curves are relatively smooth, indicating well tuned hyperparameters and stable learning dynamics.   
 
 ## Results and Discussions
