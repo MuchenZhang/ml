@@ -29,13 +29,13 @@ The purpose of SMOTE is to address class imbalance by generating synthetic sampl
 ### KNN (K-Nearest Neighbors)
 KNN works by identifying the 'k' closest data points (neighbors) to a given input based on a distance metric, such as Euclidean distance. The algorithm then predicts the output by averaging the values (in regression) or taking a majority vote among the neighbors (in classification). KNN worked well with our dataset as we can see the example imputed data distribution for the feature P_RADIUS, P_RADIUS_ERROR_MIN, and P_RADIUS_ERROR_MAX. 
 
-![KNN Example](images/final/knn1.png)
-![KNN Example](images/final/knn2.png)
-![KNN Example](images/final/knn3.png)
+![KNN Example](img/final/knn1.png)
+![KNN Example](img/final/knn2.png)
+![KNN Example](img/final/knn3.png)
 
 ### PCA (Principal Component Analysis)
-![PCA Example](images/final/pca1.png)
-![PCA Example](images/final/pca2.png)
+![PCA Example](img/final/pca1.png)
+![PCA Example](img/final/pca2.png)
 
 These two visualizations are for PCA. They show how PCA was efficient in reducing the dimensionality of the dataset and was able to capture the variance in certain principal components. 
 
@@ -52,28 +52,28 @@ This table shows the performance of each model.
 ### XGBoost
 Our XGBoost model’s accuracy was initially 1.0, which was misleading due to the imbalanced dataset. However after implementing a data augmentation method (SMOTE) the accuracy came down to a 0.9951 which is still high but still shows the impact of using a balanced and well-prepared dataset.
 
-![XGBoost](images/final/xgboost1.png)
+![XGBoost](img/final/xgboost1.png)
 
 This is the old plot for XGBoost identifying which features contribute most to the predictions for habitable or non-habitable planets. The figure shows that features,  "f47," "f70," "f71," and "f49," have very high importance scores compared to the others which means that they are influential when making predictions. Specifically, “f47” has a score of 241, implying that it was very influential. This could explain our overfitting in which the model mostly focuses on these features and doesn’t learn the broader patterns. Balancing the feature importance could improve the model’s ability to generalize to unseen data.
 
-![XGBoost feature importance](images/final/xgboost2.png)
+![XGBoost feature importance](img/final/xgboost2.png)
 
 This is the new plot for XGBoost showing a more balanced feature importance compared to the old plot, demonstrating a more even distribution of importance among the features. The old plot features "f47," "f70," "f71," and "f49" had an extremely high importance, which is not present in this new plot. This indicates that the model is now considering a broader range of features when making predictions, which is a positive development. 
 
 ### SVM
-![SVM](images/final/svm1.png)
+![SVM](img/final/svm1.png)
 
 This is a plot measuring the accuracy of the training data compared to the validation data on the data trained using SVM with data augmentation using SMOTE. It’s clear from the graph that the data is not overfitting with SMOTE. As the training set size increases, the training score approaches the validation score at a high accuracy meaning that the model is not overfitting to the training data.
 
 ### Random Forest
-![confusion matrix](images/final/randforest1.png)
+![confusion matrix](img/final/randforest1.png)
 This is the confusion matrix for the Random Forest Model. This shows that class 0 is the majority class and there are 2 misclassifications. Class 1 is a minority class and has no misclassifications. Class 2 is also a minority class and has 2 misclassifications. The model performs really well for class 0 and 1 and only has minimal errors for class 2. This indicates that the model is accurately classifying planets as habitable or inhabitable. 
 
-![random forest](images/final/randforest2.png)
+![random forest](img/final/randforest2.png)
 This is a learning curve plot for the Random Forest model. The plot shows that the F1 Score increases as the size of the training dataset increases. The F1 Score starts around .85 for smaller sets of around 2000 samples. Around 4500 to 8500 samples the F1 Score stabilizes around .90. When the dataset reaches around 10,000 samples, the F1 Score becomes .91. This shows that Random Forest is learning from the data and performs well with a large dataset. 
 
 ### Neural Network
-![neural network](images/final/nn1.png)
+![neural network](img/final/nn1.png)
 This visual shows two key training metrics for our Neural Net model trained on the exoplanet habitability classification task. These plots track its performance over 250 training epochs. The left plot shows the training loss overtime, measuring the model's prediction error over the training process. The loss curve begins at around 1.15 and shows a sharp decline within the first 50 epochs and then plateaus at around 0.65. The initial rapid decline indicates that the model is learning efficiently and the plateau suggests that the model reached a stable stage of optimization. The right plot shows the training accuracy over time. This metric represents the proportion of correct predictions the model made. The model starts off with a low training accuracy but has a sharp increase within the first 50 epochs and then plateaus at around 0.95. Both curves are relatively smooth, indicating well tuned hyperparameters and stable learning dynamics.   
 
 ## Results and Discussions
